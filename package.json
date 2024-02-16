@@ -1,0 +1,22 @@
+{
+  "name": "frameplay-ts-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/disc-loop/Frameplay-TS-Assessment"
+  },
+  "author": "Tom Jones",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.19",
+    "lodash": "^4.17.21",
+    "typescript": "^5.3.3"
+  }
+}
