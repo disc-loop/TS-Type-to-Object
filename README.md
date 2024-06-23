@@ -1,29 +1,4 @@
-# Frameplay-TS-Assessment
-This was an assignment given for a technical interview at Frameplay. The original brief can be found below.
-
-# Running
-Make sure required modules are installed and the project is built:
-```
-npm install
-npm run build
-```
-Examples of convertToObject handling different types can be found at the bottom of `index.ts`. To run through the examples, run the following:
-```
-npm run start
-```
-
-# Notes
-I liked the problem, but it was time consuming and difficult to solve. The main difficulties were:
-1. Microsoft's documentation for the Compiler API is very limited and some of their examples didn't seem to work. It took a while to find [more thorough docs](https://writer.sh/posts/gentle-introduction-to-typescript-compiler-api/).
-2. My approach was flawed - I was hoping to build the object literal as the `visit()` function traversed the AST but this proved to be very complicated and difficult to troubleshoot. The end result works but the code is difficult to follow. If I were to do this again, I'd break the program into smaller parts instead of trying to do everything all at once. That might result in a less efficient algorithm but it would be easier to understand.
-
-It's worth noting that my solution differs a little from the sample output provided in the brief. The key difference is that I have chosen to represent literal types as strings wrapped in quotes as to differentiate them from primitives like `string` and `number`:
-```
-// Hence
-"solid" | "text" | number
-// Now becomes
-[ '"solid"', '"text"', 'number' ]
-```
+This was an assignment given for a technical interview.
 
 # Brief
 Using the [TypeScript compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API), write a function that inputs a string containing a TypeScript type, and outputs an object literal representing the type.
@@ -62,3 +37,28 @@ convertToObject(`type Button = {
  * }
  *
  */
+```
+
+# Running
+Make sure required modules are installed and the project is built:
+```
+npm install
+npm run build
+```
+Examples of convertToObject handling different types can be found at the bottom of `index.ts`. To run through the examples, run the following:
+```
+npm run start
+```
+
+# Notes
+I liked the problem, but it was time consuming and difficult to solve. The main difficulties were:
+1. Microsoft's documentation for the Compiler API is very limited and some of their examples didn't seem to work. It took a while to find [more thorough docs](https://writer.sh/posts/gentle-introduction-to-typescript-compiler-api/).
+2. My approach was flawed - I was hoping to build the object literal as the `visit()` function traversed the AST but this proved to be very complicated and difficult to troubleshoot. The end result works but the code is difficult to follow. If I were to do this again, I'd break the program into smaller parts instead of trying to do everything all at once. That might result in a less efficient algorithm but it would be easier to understand.
+
+It's worth noting that my solution differs a little from the sample output provided in the brief. The key difference is that I have chosen to represent literal types as strings wrapped in quotes as to differentiate them from primitives like `string` and `number`:
+```
+// Hence
+"solid" | "text" | number
+// Now becomes
+[ '"solid"', '"text"', 'number' ]
+```
